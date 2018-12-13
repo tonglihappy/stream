@@ -15,26 +15,26 @@
 
 
 2.测试时间戳从0开始
-`
-func TestVideoqaDtsStartFrom_0(t *testing.T) {<br>
-    name := "cdn_base_test2"<br>
+```
+func TestVideoqaDtsStartFrom_0(t *testing.T) {
+    name := "cdn_base_test2"
 
-    defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFileDtsNotStartFrom_0, getPushUrl(name, util.Edge1Addr)))<br>
-    treq := util.NewHttpReq()<br>
-    treq.Timeout = 20 * time.Second<br>
-    treq.Url = "http://domain/app/streamname.flv"<br>
+    defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFileDtsNotStartFrom_0, getPushUrl(name, util.Edge1Addr)))
+    treq := util.NewHttpReq()
+    treq.Timeout = 20 * time.Second
+    treq.Url = "http://domain/app/streamname.flv"
 
-    flvChecker := util.NewFlvChecker()<br>
-    flvChecker.DtsStartFrom_0 = true<br>
-    flvChecker.ReadCnt = 100<br>
+    flvChecker := util.NewFlvChecker()
+    flvChecker.DtsStartFrom_0 = true
+    flvChecker.ReadCnt = 100
 
-    util.AssertHttpRequest(t, treq, flvChecker)<br>
-}<br>
-`
+    util.AssertHttpRequest(t, treq, flvChecker)
+}
+```
 
 3.http协议在拉不到流的状况下返回给client的状态码的校验
 
-`
+```
 func TestVideoqaCheckPullStreamFailedStatusCode(t *testing.T) {
     name := "test_snipper"
     treq := util.NewHttpReq()
@@ -46,4 +46,4 @@ func TestVideoqaCheckPullStreamFailedStatusCode(t *testing.T) {
 
     util.AssertHttpRequest(t, treq, httpChecker)
 }
-`
+```
