@@ -6,29 +6,29 @@
 #举例子：<br>
 1.测试基本推拉流<br>
 `
-func TestVideoqaBaseStream(t *testing.T) {
-        name := "cdn_base_test1"
-        defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFile, getPushUrl(name, util.Edge1Addr)))
-        util.AssertMultiNormalHdl(t, getUrls(name, false, false), 10240, true)
-}
+func TestVideoqaBaseStream(t *testing.T) {<br>
+        name := "cdn_base_test1"<br>
+        defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFile, getPushUrl(name, util.Edge1Addr)))<br>
+        util.AssertMultiNormalHdl(t, getUrls(name, false, false), 10240, true)<br>
+}<br>
 `
 
 2.测试时间戳从0开始
 `
-func TestVideoqaDtsStartFrom_0(t *testing.T) {
-    name := "cdn_base_test2"
+func TestVideoqaDtsStartFrom_0(t *testing.T) {<br>
+    name := "cdn_base_test2"<br>
 
-    defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFileDtsNotStartFrom_0, getPushUrl(name, util.Edge1Addr)))
-    treq := util.NewHttpReq()
-    treq.Timeout = 20 * time.Second
-    treq.Url = "http://domain/app/streamname.flv"
+    defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFileDtsNotStartFrom_0, getPushUrl(name, util.Edge1Addr)))<br>
+    treq := util.NewHttpReq()<br>
+    treq.Timeout = 20 * time.Second<br>
+    treq.Url = "http://domain/app/streamname.flv"<br>
 
-    flvChecker := util.NewFlvChecker()
-    flvChecker.DtsStartFrom_0 = true
-    flvChecker.ReadCnt = 100
+    flvChecker := util.NewFlvChecker()<br>
+    flvChecker.DtsStartFrom_0 = true<br>
+    flvChecker.ReadCnt = 100<br>
 
-    util.AssertHttpRequest(t, treq, flvChecker)
-}
+    util.AssertHttpRequest(t, treq, flvChecker)<br>
+}<br>
 `
 
 3.http协议在拉不到流的状况下返回给client的状态码的校验
