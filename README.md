@@ -1,8 +1,9 @@
-简介：本工程是流媒体自动化测试的基本框架。包含基本推拉流，http/rtmp/websocket等协议的校验，flv的基础校验。可用作流媒体服务器自动化测试的基础框架。
+#简介：
+本工程是流媒体自动化测试的基本框架。包含基本推拉流，http/rtmp/websocket等协议的校验，flv的基础校验。可用作流媒体服务器自动化测试的基础框架。
 代码作为一些参考，因为涉及到公司的一些不能透漏的信息，只把底层的基础拿出来分享。
 
-举例子：
-1.测试基本推拉流
+#举例子：
+##1.测试基本推拉流
 func TestVideoqaBaseStream(t *testing.T) {
         name := "cdn_base_test1"
         defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFile, getPushUrl(name, util.Edge1Addr)))
