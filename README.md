@@ -4,7 +4,7 @@
 代码作为一些参考，因为涉及到公司的一些不能透漏的信息，只把底层的基础拿出来分享。<br>
 
 #举例子：<br>
-##1.测试基本推拉流<br>
+1.测试基本推拉流<br>
 `
 func TestVideoqaBaseStream(t *testing.T) {
         name := "cdn_base_test1"
