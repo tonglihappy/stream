@@ -47,3 +47,5 @@ func TestVideoqaCheckPullStreamFailedStatusCode(t *testing.T) {
     util.AssertHttpRequest(t, treq, httpChecker)
 }
 ```
+AssertHttpRequest、AssertStopStream 等断言语句就是分享的框架里实现的。推流的成功与否的判断，基于ffmpeg的lib来实现，可以推卡顿等异常流。
+
