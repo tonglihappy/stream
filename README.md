@@ -7,9 +7,9 @@
 ## 1.测试基本推拉流
 `
     func TestVideoqaBaseStream(t *testing.T){  
-    name := "cdn_base_test1"  
-    defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFile, getPushUrl(name, util.Edge1Addr)))  
-    util.AssertMultiNormalHdl(t, getUrls(name, false, false), 10240, true)          
+        name := "cdn_base_test1"  
+        defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFile, getPushUrl(name, util.Edge1Addr)))  
+        util.AssertMultiNormalHdl(t, getUrls(name, false, false), 10240, true)          
     }
 `
 
