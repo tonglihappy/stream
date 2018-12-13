@@ -4,15 +4,13 @@
         可用作流媒体服务器自动化测试的基础框架。代码作为一些参考，因为涉及到公司的一些不能透漏的信息，只把底层的基础拿出来分享。
 
 # 举例子：<br>
-        1.测试基本推拉流<br>
-        `<func TestVideoqaBaseStream(t *testing.T) {  
+## 1.测试基本推拉流
+`<func TestVideoqaBaseStream(t *testing.T) {  
         name := "cdn_base_test1"  
         defer util.AssertStopStream(t, util.AssertPushStream(t, util.MediaFile, getPushUrl(name, util.Edge1Addr)))  
         util.AssertMultiNormalHdl(t, getUrls(name, false, false), 10240, true)          
-        }  >`
-`
+ }  >`
 
-`
 
 2.测试时间戳从0开始
 `
