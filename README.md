@@ -14,6 +14,7 @@ func TestVideoqaBaseStream(t *testing.T) {
 `
 
 2.测试时间戳从0开始
+`
 func TestVideoqaDtsStartFrom_0(t *testing.T) {
     name := "cdn_base_test2"
 
@@ -28,9 +29,11 @@ func TestVideoqaDtsStartFrom_0(t *testing.T) {
 
     util.AssertHttpRequest(t, treq, flvChecker)
 }
+`
 
 3.http协议在拉不到流的状况下返回给client的状态码的校验
 
+`
 func TestVideoqaCheckPullStreamFailedStatusCode(t *testing.T) {
     name := "test_snipper"
     treq := util.NewHttpReq()
@@ -42,3 +45,4 @@ func TestVideoqaCheckPullStreamFailedStatusCode(t *testing.T) {
 
     util.AssertHttpRequest(t, treq, httpChecker)
 }
+`
